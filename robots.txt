@@ -31,4 +31,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://deanchen.me/jiangshan-map/sitemap.xml
+Sitemap: https://hykfft.dpdns.org/sitemap.xml
