@@ -52,22 +52,30 @@
 ## 文件结构
 
 ```
-/                     ← GitHub Pages 根目录（main 分支）
-├── index.html        ← 应用主页面（含部署差异说明横幅）
-├── css/style.css     ← 样式
-├── js/               ← JavaScript（atlas_snapshots.js 已剥离 prefecture；china_geo_data.js 已移除省界）
-├── assets/           ← 音频、地形晕渲图、预览图等静态资源
-├── topics/           ← 朝代专题页面
-├── geojson/          ← GeoJSON 定位工具库（无敏感数据）
-├── LICENSE           ← GPL-3.0 全文（上游要求）
-├── CNAME             ← 自定义域名 hykfft.dpdns.org
-└── .nojekyll         ← 告知 GitHub Pages 跳过 Jekyll 处理
+/                           ← 根目录（GitHub Pages 从 main 分支根部署）
+├── index.html              ← 教育科普门户首页
+├── topics/                 ← 旧版专题书签兼容重定向（→ /landscape/topics/）
+├── CNAME                   ← 自定义域名 hykfft.dpdns.org
+├── .nojekyll               ← 告知 GitHub Pages 跳过 Jekyll 处理
+├── LICENSE                 ← GPL-3.0 全文
+├── sitemap.xml / robots.txt / llms.txt
+└── landscape/              ← 江山时序历史地图应用（全部地图资源在此）
+    ├── index.html          ← 地图主页面
+    ├── css/style.css
+    ├── js/                 ← atlas_snapshots.js 已剥离 prefecture；china_geo_data.js 已移除省界
+    ├── assets/             ← 音频、地形晕渲、图标等
+    ├── topics/             ← 35 个朝代专题页面
+    ├── geojson/
+    └── manifest.webmanifest
 ```
 
 ## 托管说明
 
-- **GitHub Pages**：从 `main` 分支根目录部署，配置在 Settings → Pages。
-- **Cloudflare**：当前仅作 DNS 解析（灰云模式）。NS 切换及 HTTPS/代理设置需由协调者在 Cloudflare 控制台完成，本仓库不保存任何凭证。
+- **GitHub Pages**：从 `main` 分支根目录部署，配置在仓库 Settings → Pages。
+- 地图应用访问路径：`https://hykfft.dpdns.org/landscape/`
+- 旧分享链接 `/?year=...` 等参数会自动跳转到 `/landscape/?year=...`
+- 旧 `/topics/*.html` 书签会自动跳转到 `/landscape/topics/*.html`
+- **Cloudflare**：当前仅作 DNS 解析。NS 切换及 HTTPS/代理设置需由协调者在 Cloudflare 控制台完成，本仓库不保存任何凭证。
 
 ## 维护
 

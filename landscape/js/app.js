@@ -5769,7 +5769,11 @@
     // ---------------- Chronicle Sidebar ----------------
     _syncDocumentSeoMeta() {
       if (typeof document === 'undefined') return;
-      const baseSiteUrl = (typeof location !== 'undefined' ? location.origin : 'https://hykfft.dpdns.org') + '/';
+      const baseSiteUrl = (function() {
+        var _el = typeof document !== 'undefined' ? document.getElementById('atlas-app-script') : null;
+        var _sp = (_el && _el.getAttribute('data-sitepath')) || '/';
+        return (typeof location !== 'undefined' ? location.origin : 'https://hykfft.dpdns.org') + _sp;
+      })();
       const isEn = this.locale === 'en';
       const cur = this.dynasties && this.dynasties[this.dynastyIdx];
       let pageTitle = isEn
@@ -5844,7 +5848,11 @@
         'aria-label',
         'Historical Dynasties, Person Chronicles & Strategic Passes Directory'
       );
-      const baseSiteUrl = (typeof location !== 'undefined' ? location.origin : 'https://hykfft.dpdns.org') + '/';
+      const baseSiteUrl = (function() {
+        var _el = typeof document !== 'undefined' ? document.getElementById('atlas-app-script') : null;
+        var _sp = (_el && _el.getAttribute('data-sitepath')) || '/';
+        return (typeof location !== 'undefined' ? location.origin : 'https://hykfft.dpdns.org') + _sp;
+      })();
       const dynItems = (this.dynasties || [])
         .map((d) => {
           const dName = this.dynastyName(d);
